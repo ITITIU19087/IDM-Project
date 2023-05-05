@@ -29,13 +29,7 @@ public class ClassificationService {
         nb.buildClassifier(trainSet);
         return evaluateService.evaluteTest(trainSet,testSet,nb);
     }
-
-    public String evaluteTest(Instances data, Instances testData, Classifier cls) throws Exception {
-        Evaluation eval = new Evaluation(data);
-        eval.evaluateModel(cls,testData);
-        return eval.toSummaryString();
-    }
-
+    
     public String j48Classi() throws Exception{
         Instances trainSet = loadDataService.loadTrainSet();
         Instances testSet = loadDataService.loadTestSet();

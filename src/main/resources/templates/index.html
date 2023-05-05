@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>IDM Project</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+
 </head>
 <body>
-    <form action="/process_form" method="post">
-      <label for="lang">Language</label>
-      <select name="type" id="lang">
-        <option value="nb">Naive Bayes</option>
-        <option value="nb10folds">Naive Bayes Cross-Validation</option>
-        <option value="j48">J48</option>
-        <option value="j4810folds">J48 Cross-Validation</option>
-        <option value="lr">Logistic Regression</option>
-        <option value="lr10folds">Logistic Regression Cross-Validation</option>
-        <option value="rd">Random Forest</option>
-        <option value="rd10folds">Random Forest Cross-Validation</option>
-      </select>
-      <input type="submit" value="Submit" />
-    </form>
+    <div class="container">
+        <form action="/process_form" method="post">
+          <label for="lang">Language</label>
+          <select name="type" id="lang">
+            <option value="nb">Naive Bayes</option>
+            <option value="nb10folds">Naive Bayes Cross-Validation</option>
+            <option value="j48">J48</option>
+            <option value="j4810folds">J48 Cross-Validation</option>
+            <option value="lr">Logistic Regression</option>
+            <option value="lr10folds">Logistic Regression Cross-Validation</option>
+            <option value="rd">Random Forest</option>
+            <option value="rd10folds">Random Forest Cross-Validation</option>
+          </select>
+          <input type="submit" value="Submit" />
+        </form>
+    <div>
+    <div class="result" th:if="${result}">
+        <p th:text = "${result}"></p>
+    </div>
 </body>
 </html>

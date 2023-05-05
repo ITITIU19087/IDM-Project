@@ -12,8 +12,20 @@ public class Cross10FoldsController {
     Cross10FoldsService service;
 
     @GetMapping("/nb10")
-    public String rFClassify() throws Exception {
+    public String nbClassify() throws Exception {
         return service.nB10Folds();
     }
 
+    @GetMapping("/j4810")
+    public String j48Classify() throws Exception {
+        return service.j4810Folds();
+    }
+    @GetMapping("/lr10")
+    public String lRClassify() throws Exception {
+        return service.lR10Folds();
+    }
+    @GetMapping("/rf10")
+    public String rFClassify() throws Exception {
+        return service.rF10Folds();
+    }
 }
